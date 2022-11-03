@@ -14,7 +14,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 
-public class ProvaService {
+public class ProvaAddAutomaticiService {
     public static final String UO = "uo";
     public static final String IDWOA = "idWoa";
     public static final String APP = "app";
@@ -43,7 +43,7 @@ public class ProvaService {
                         "\"qntRecuperata\":0.0,\n" +
                         "\"barcodeMateriali\":[\n" +
                         "{\n" +
-                        "\"barcode\":\"1234565162218585956555559\",\n" +
+                        "\"barcode\":\"1234565162218555555555559\",\n" +
                         "\"matricolaMateriale\":\"516221\",\n" +
                         "\"qntPosata\":1,\n" +
                         "\"qntRecuperata\":0\n" +

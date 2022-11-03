@@ -27,6 +27,23 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        findViewById<Button>(R.id.syncBtn).setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    ProvaServiceActivity::class.java
+                )
+            )
+        }
+        findViewById<Button>(R.id.syncCertificate).setOnClickListener {
+            val inte = Intent(
+                this@MainActivity,
+                ProvaServiceActivity::class.java
+            )
+            inte.putExtra("MIMMO", true)
+            startActivity(inte)
+        }
+
 
         /**/
     }
