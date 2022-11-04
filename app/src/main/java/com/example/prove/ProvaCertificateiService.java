@@ -65,9 +65,10 @@ public class ProvaCertificateiService {
 
                 @Override
                 public void handleMessage(Message msg) {
-                    Bundle b = (Bundle) msg.obj;
+                    Bundle b = msg.getData();
                     Log.d("MIMMO", "messaggio ricevuto");
-                    onProvaDone.onProvaDone(b.getString(CERTIFICATE_AND_COMPLIANCE));
+                    String result = b.containsKey(CERTIFICATE_AND_COMPLIANCE) ? b.getString(CERTIFICATE_AND_COMPLIANCE) : "no results found";
+                    onProvaDone.onProvaDone(result);
                 }
             }
         };

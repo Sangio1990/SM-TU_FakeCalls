@@ -19,6 +19,7 @@ class ProvaServiceActivity : AppCompatActivity() {
             "Sync materiali automatici",
         )
         if (intent.getBooleanExtra("MIMMO", false)) {
+            show.hide()
             ProvaCertificateiService.provaService(this) {
                 findViewById<TextView>(R.id.json).text = it
             }
