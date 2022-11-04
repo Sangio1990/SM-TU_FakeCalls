@@ -43,6 +43,7 @@ public class ProvaCertificateiService {
                 bundle.putString(MODELLO, "D81CB1");
                 bundle.putString(SERIALE, "ME-MIMMO");
                 Message msg = Message.obtain(null, 0, 0, 0, bundle);
+                msg.setData(bundle);
                 msg.replyTo = new Messenger(new IncomingHandler(activity));
                 try {
                     mService.send(msg);
