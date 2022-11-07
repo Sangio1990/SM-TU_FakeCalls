@@ -38,10 +38,10 @@ public class ProvaCertificateiService {
                 Log.d("MIMMO", "onServiceConnected");
                 mService = new Messenger(service);
                 Bundle bundle = new Bundle();
-                bundle.putString(BARCODE, "987653678");
-                bundle.putString(MARCA, "510");
-                bundle.putString(MODELLO, "D81CB1");
-                bundle.putString(SERIALE, "ME-MIMMO");
+                bundle.putString(BARCODE, "21E4E5KH100677039");
+                bundle.putString(MARCA, "BRAND3");
+                bundle.putString(MODELLO, "MODEL3");
+                bundle.putString(SERIALE, "SERIAL3");
                 Message msg = Message.obtain(null, 0, 0, 0, bundle);
                 msg.setData(bundle);
                 msg.replyTo = new Messenger(new IncomingHandler(activity));
@@ -66,7 +66,8 @@ public class ProvaCertificateiService {
                 @Override
                 public void handleMessage(Message msg) {
                     Bundle b = msg.getData();
-                    Log.d("MIMMO", "messaggio ricevuto");
+                    Log.d("MIMMO", "messaggio ricevuto \n" + b.getString(CERTIFICATE_AND_COMPLIANCE));
+
                     String result = b.containsKey(CERTIFICATE_AND_COMPLIANCE) ? b.getString(CERTIFICATE_AND_COMPLIANCE) : "no results found";
                     onProvaDone.onProvaDone(result);
                 }
