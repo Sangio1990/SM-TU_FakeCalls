@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Prove">
         <activity android:name=".ProvaServiceActivity"></activity>
+        <activity
+            android:name=".AttachmentsActivity"
+            android:exported="true" />
         <activity android:name=".PhotoVideoActivity" />
         <activity
             android:name=".MainActivity"

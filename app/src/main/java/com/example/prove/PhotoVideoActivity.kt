@@ -80,9 +80,9 @@ class PhotoVideoActivity : AppCompatActivity() {
         intent.putExtra(REGISTERED_VAT_NUMBER, "6552241215")
         intent.putExtra(CONTRACT_CODE, "5200002608")
         intent.component =
-            ComponentName(SMTU_PACKAGE, SMTU_MAIN_ACTIVITY)
+            ComponentName(SMTU_PACKAGE, SMTU_MAIN_ACTIVITY_CAMERA)
         intent.setPackage(packageName)
-        intent.action = SMTU_PACKAGE.plus(".").plus(photoVideoAction)
+        intent.action = SMTU_PACKAGE.plus(".".plus(photoVideoAction))
         startForResult.launch(intent)
     }
 }

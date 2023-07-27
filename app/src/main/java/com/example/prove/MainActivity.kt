@@ -1,9 +1,13 @@
 package com.example.prove
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.prove.Constants.*
 import java.util.*
 
@@ -44,8 +48,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(inte)
         }
 
-
-        /**/
+        findViewById<Button>(R.id.addAttachemnts).setOnClickListener {
+            val i = Intent(this@MainActivity, AttachmentsActivity::class.java);
+            startActivity(i)
+        }
     }
-
 }
+

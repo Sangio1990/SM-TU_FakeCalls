@@ -114,7 +114,9 @@ public class Constants {
     public static final String ACTION_SCAN_MATERIAL = "wfm.in.enel.com.smtu.scanMaterial";
     public static final String ACTION_BARCODE_SCANNER = "wfm.in.enel.com.smtu.barcodeScanner";
     public static final String ACTION_INFOCAM = "wfm.in.enel.com.smtu.infocam";
+    public static final String ACTION_ADD_ATTACHMENTS = "wfm.in.enel.com.smtu.addAttachments";
     public static final String FALSE = "false";
+
 
     //region materiali column
     public static final String MATRICOLA_MATERIALE_SMTU_COLUMN = "matricolaMateriale";
@@ -213,5 +215,8 @@ public class Constants {
     public static final String VIDEO_ACTION = "video";
     public static final String PICTURE_ACTION = "picture";
     //endregion
+    public static final String MODE_ADD_ATTACHMENTS = "attachments";
+
+    public static final String SMTU_MAIN_ACTIVITY_CAMERA = SMTU_PACKAGE + ".MainActivityCamera";
 
 }
