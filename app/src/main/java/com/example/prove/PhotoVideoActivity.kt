@@ -1,7 +1,6 @@
 package com.example.prove
 
 import android.app.Activity
-import android.app.ProgressDialog
 import android.content.ComponentName
 import android.content.Intent
 import android.graphics.Bitmap
@@ -9,7 +8,6 @@ import android.graphics.ImageDecoder
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
 import android.view.View.VISIBLE
 import android.widget.ImageView
@@ -19,10 +17,30 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.example.prove.Constants.*
 import java.io.File
 import java.io.FileOutputStream
+import android.app.Dialog
+import android.widget.ProgressBar
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
+
+class ProgressDialogFragment : DialogFragment() {
+    var text = "";
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val progressBar = ProgressBar(requireContext())
+        progressBar.isIndeterminate = true
+
+        return AlertDialog.Builder(requireContext())
+            .setView(progressBar)
+            .setTitle("Call SM-TU Camera")
+            .setMessage(text)
+            .setCancelable(true)
+            .create()
+    }
+}
 
 class PhotoVideoActivity : AppCompatActivity() {
 
-    lateinit var show: ProgressDialog
+    var progressDialogFragment = ProgressDialogFragment()
     lateinit var photoVideoAction: String
 
     val startForResult =
@@ -51,7 +69,7 @@ class PhotoVideoActivity : AppCompatActivity() {
                             val imageView = findViewById<ImageView>(R.id.image)
                             imageView.visibility = VISIBLE
                             imageView.setImageBitmap(bitmap)
-                            show.dismiss()
+                            progressDialogFragment.dismiss()
                         } ?: Toast.makeText(
                             this@PhotoVideoActivity,
                             "Image not available",
@@ -69,18 +87,20 @@ class PhotoVideoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_photo_video)
         photoVideoAction = intent.getStringExtra(PHOTO_VIDEO_LABEL)!!
-        show = ProgressDialog.show(
-            this, "Call SM-TU Camera",
-            "Mode: $photoVideoAction",
-        )
+
+        progressDialogFragment.text = "Mode: $photoVideoAction"
+        progressDialogFragment.show(supportFragmentManager, "SM-TU Camera")
+
         val intent = Intent()
         intent.putExtra(MT_PACKAGE_NAME, packageName)
         intent.putExtra(UO, "D81CB")
-        intent.putExtra(IDWOA, "43342242")
+        intent.putExtra(IDWOA, "idWoa43342242")
         intent.putExtra(REGISTERED_VAT_NUMBER, "6552241215")
         intent.putExtra(CONTRACT_CODE, "5200002608")
         intent.component =
-            ComponentName(SMTU_PACKAGE, SMTU_MAIN_ACTIVITY_CAMERA)
+            //ComponentName(SMTU_PACKAGE, SMTU_MAIN_ACTIVITY)
+        ComponentName(SMTU_PACKAGE, SMTU_MAIN_ACTIVITY_CAMERA)
+
         intent.setPackage(packageName)
         intent.action = SMTU_PACKAGE.plus(".".plus(photoVideoAction))
         startForResult.launch(intent)
