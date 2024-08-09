@@ -74,4 +74,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/videoBtn" />
 
+    <Button
+        android:id="@+id/addNewButtonAttachemnts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nuovo Allegati"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addAttachemnts" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

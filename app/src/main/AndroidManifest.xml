@@ -20,6 +20,9 @@
         <activity
             android:name=".AttachmentsActivity"
             android:exported="true" />
+        <activity
+            android:name=".AttachmentsActivity2"
+            android:exported="true" />
         <activity android:name=".PhotoVideoActivity" />
         <activity
             android:name=".MainActivity"

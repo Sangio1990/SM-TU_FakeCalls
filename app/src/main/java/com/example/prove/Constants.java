@@ -219,4 +219,9 @@ public class Constants {
 
     public static final String SMTU_MAIN_ACTIVITY_CAMERA = SMTU_PACKAGE + ".MainActivityCamera";
 
+    public static final String SWIM_SEND_SMDP = "SWIM_SEND_SMDP";
+    public static final String SWIM_CLASS = "SWIM_CLASS";
+    public static final String SWIM_ATTACHMENT_TO_FB = "SWIM_ATTACHMENT_TO_FB";
+
+
 }

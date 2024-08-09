@@ -52,6 +52,11 @@ class MainActivity : AppCompatActivity() {
             val i = Intent(this@MainActivity, AttachmentsActivity::class.java);
             startActivity(i)
         }
+
+        findViewById<Button>(R.id.addNewButtonAttachemnts).setOnClickListener {
+            val i = Intent(this@MainActivity, AttachmentsActivity2::class.java);
+            startActivity(i)
+        }
     }
 }
 
