@@ -21,7 +21,7 @@
             android:name=".AttachmentsActivity"
             android:exported="true" />
         <activity
-            android:name=".AttachmentsActivity2"
+            android:name=".DirectAttachmentsActivity"
             android:exported="true" />
         <activity android:name=".PhotoVideoActivity" />
         <activity

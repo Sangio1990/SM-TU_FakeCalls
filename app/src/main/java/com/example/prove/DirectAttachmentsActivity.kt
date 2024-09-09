@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.prove.Constants.ACTION_ADD_ATTACHMENTS
 import com.example.prove.Constants.SMTU_MAIN_ACTIVITY
 import com.example.prove.Constants.SMTU_PACKAGE
-import com.example.prove.adapters.AttachmentAdapter
 import com.example.prove.adapters.AttachmentAdapter2
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -22,7 +21,7 @@ import com.google.gson.reflect.TypeToken
 
 data class Attachment2(val fileName: String, val filePath: String)
 
-class AttachmentsActivity2 : AppCompatActivity() {
+class DirectAttachmentsActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "FAKECALL"
@@ -95,8 +94,8 @@ class AttachmentsActivity2 : AppCompatActivity() {
             intent.putExtra(Constants.MATERIAL_METHOD, "attachments")
             intent.putExtra(Constants.MT_OPERATION_ID, "111111")
 
-            intent.putExtra(Constants.SWIM_CLASS, "SWIM_XX")
-            intent.putExtra(Constants.SWIM_SEND_SMDP, "TRUE")
+            intent.putExtra(Constants.SWIM_DOC_CLASS, "SWIM_XX")
+            intent.putExtra(Constants.SWIM_SEND_TO_SMDP, "TRUE")
             intent.putExtra(Constants.SWIM_ATTACHMENT_TO_FB, "TRUE")
 
             intent.setPackage(packageName)

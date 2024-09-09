@@ -1,13 +1,9 @@
 package com.example.prove
 
-import android.content.BroadcastReceiver
-import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.prove.Constants.*
 import java.util.*
 
@@ -53,8 +49,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
 
-        findViewById<Button>(R.id.addNewButtonAttachemnts).setOnClickListener {
-            val i = Intent(this@MainActivity, AttachmentsActivity2::class.java);
+        findViewById<Button>(R.id.addDirectAttachemnts).setOnClickListener {
+            val i = Intent(this@MainActivity, DirectAttachmentsActivity::class.java);
             startActivity(i)
         }
     }
