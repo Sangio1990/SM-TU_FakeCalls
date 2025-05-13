@@ -89,6 +89,7 @@ class DirectAttachmentsActivity : AppCompatActivity() {
             intent.putExtra(Constants.UO, "D81CB")
             intent.putExtra(Constants.APP, "SM-TU_FakeCalls")
             intent.putExtra(Constants.IDWOA, idWoa)
+            //intent.putExtra(Constants.ID_SECONDARIO, "12345678")
             intent.putExtra(Constants.REGISTERED_VAT_NUMBER, "6552241215")
             intent.putExtra(Constants.CONTRACT_CODE, "5200002608")
             intent.putExtra(Constants.MATERIAL_METHOD, "attachments")
@@ -96,7 +97,7 @@ class DirectAttachmentsActivity : AppCompatActivity() {
 
             intent.putExtra(Constants.SWIM_DOC_CLASS, "SWIM_XX")
             intent.putExtra(Constants.SWIM_SEND_TO_SMDP, "TRUE")
-            intent.putExtra(Constants.SWIM_ATTACHMENT_TO_FB, "TRUE")
+            intent.putExtra(Constants.SWIM_ATTACHMENT_TO_BFF, "TRUE")
 
             intent.setPackage(packageName)
             intent.action = ACTION_ADD_ATTACHMENTS
@@ -104,7 +105,6 @@ class DirectAttachmentsActivity : AppCompatActivity() {
             intent.component = ComponentName(SMTU_PACKAGE, SMTU_MAIN_ACTIVITY)
             Log.d(TAG, "CALLING SMTU...")
             attachmentsLauncher.launch(intent)
-
         }
 
         builder.show()

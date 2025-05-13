@@ -36,6 +36,7 @@ public class Constants {
     public static final String UO = "uo";
     public static final String APP = "app";
     public static final String IDWOA = "idWoa";
+    public static final String ID_SECONDARIO = "idSecondario";
     public static final String MATERIALI_PREVENTIVATI = "materialiPreventivati";
     public static final String MATERIALI_AUTOMATICI = "materialiAutomatici";
     public static final String WAREHOUSE_PREVENTIVATI = "warehousePreventivati";
@@ -221,7 +222,7 @@ public class Constants {
 
     public static final String SWIM_SEND_TO_SMDP = "SWIM_SEND_TO_SMDP";
     public static final String SWIM_DOC_CLASS = "SWIM_DOC_CLASS";
-    public static final String SWIM_ATTACHMENT_TO_FB = "SWIM_ATTACHMENT_TO_FB";
+    public static final String SWIM_ATTACHMENT_TO_BFF = "SWIM_ATTACHMENT_TO_BFF";
 
 
 }
